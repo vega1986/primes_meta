@@ -14,16 +14,6 @@ namespace binom {
         template<class valuable, class term>
         struct summijkOuter;
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
 // ********************************************* //
 // ********************************************* //
 // ********************************************* //
@@ -115,23 +105,6 @@ namespace binom {
             return;
         }
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-                
-        
-        
-        
 // ******************************************** //
 // ******************************************** //
 // ******************************************** //
@@ -355,12 +328,7 @@ namespace binom {
                     return result;
                 }
         };        
-        
-        
-        
-        
-        
-        
+
         template<class TermLeftType, class TermRightType>
         inline double getSumm(TermLeftType& tle, TermRightType& tri)
         {
@@ -377,35 +345,6 @@ namespace binom {
                 term<nle> tle(ale, ble, cle, dle);
                 term<nri> tri(ari, bri, cri, dri);
                 return getSumm(tle, tri);
-        }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-//          template<size_t n, class Term>
-//          inline double getSumm(Term& t)
-//          {
-//              summijk<Term> s(t);
-//              meta_loop_outer<n,0>(s);
-//              return s.get_result();
-//          }        
-//          
-//          template<size_t n>
-//          inline double binom_abcd(double _a, double _b, double _c, double _d)
-//          {
-//              term<n> t(_a, _b, _c, _d);
-//              double res = getSumm<n>(t);
-//              return res;
-//          }
-        
-        
+        }        
     }
-    
-    
-    
 }

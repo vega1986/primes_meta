@@ -1,57 +1,38 @@
 #include <iostream>
 #include <cmath>
-    // #include "aplusbn.h"
-    // #include "abc.h"
-    // #include "abcd.h"
-    // #include "abcdXabcd.h"
-    // #include "a1b1c1d1n1Xa2b2c2d2n2.h"
-//#include "a1b1c1d1n1a2b2c2d2n2.h"
+//#include "abcdXabcd.h"
 #include "primes.h"
+#include "a1b1c1d1n1a2b2c2d2n2.h"
 
 int main()
 {
     using namespace std;
-//     using namespace binom::triplet;
-//     using namespace binom::quartet;
 
+    cout << "Example 1" << endl;
+    cout << "calculation of prime values" << endl;
+    cout << " 5-th prime number is " << prime_value< 5>::value << endl;
+    cout << "13-th prime number is " << prime_value<13>::value << endl;
+    cout << endl << " ********************************************** " << endl;
 
-//     using namespace binom::two_quartet;
-    //using namespace binom::two_quartet;
+    using namespace binom::two_quartet;
+    cout << "Example №2" << endl;
+    cout << "expand of brackets at compilation time of expression" << endl;
+    cout << "(Al + Bl + Cl + Dl)^n1 * (Ar + Br + Cr + Dr)^n2" << endl;
+    cout << "below are the each term of expanded expression and the result of the sum" << endl;
 
-    cout << "5-th prime number is " << prime_value<5>::value << endl;
-    cout << "113-th prime number is " << prime_value<113>::value << endl;
+    constexpr double al{ 0.55394 };
+    constexpr double bl{ 0.49857 };
+    constexpr double cl{ 0.34578 };
+    constexpr double dl{ 0.64329 };
 
+    constexpr double ar{ 1.03254 };
+    constexpr double br{ 0.65987 };
+    constexpr double cr{ 2.35665 };
+    constexpr double dr{ 1.22343 };
 
-//     primes<33>::type pr;
-//     static_assert(pr == 0);
+    cout << "template result = " << get_summ<2, 3>(al, bl, cl, dl, /**/ ar, br, cr, dr) << endl;
 
-
-//     cout << pow_t<-13>(3.0) << endl;
-//     cout << prime_value<5>::value << endl;
-//
-//     cout << "factorial" << endl;
-//     cout << "7! = " << factorial<7>::value << endl;
-//     cout << "C(4,0) = " << Comb<4,0>::value << endl;
-//
-//     cout << "binom<5>(1.23, 2.34) = " << binom<5>(1.23, 2.34) << endl;
-
-//     meta_loop_outer<3,0>();
-//     cout << binom_apbn<12>(1,1) << endl;
-
-//     cout << binom_abcd<5>(0.55394, 0.49857, 0.34578, 0.64329) << endl;
-
-
-//     cout << binom_a1b1c1d1_a2b2c2d2<3,5>(0.55394, 0.49857, 0.34578, 0.64329,
-//                                          1.03254, 0.65987, 2.35665, 1.22343) << endl;
-
-//         cout << binom_a1b1c1d1_a2b2c2d2<3,5>(0.55394, 0.49857, 0.34578, 0.64329,
-//                                              1.03254, 0.65987, 2.35665, 1.22343);
-
-    //cout << get_summ<5,6>(0.55394, 0.49857, 0.34578, 0.64329,
-    //                      1.03254, 0.65987, 2.35665, 1.22343) << endl;
-
-
-    // cout << pow(0.55394+0.49857+0.34578+0.64329,5) * pow(1.03254+0.65987+2.35665+1.22343,6) << endl;
+    cout << "direct result = " << std::pow(al + bl + cl + dl, 2.0) * std::pow(ar + br + cr + dr, 3.0) << std::endl;
 
     return 0;
 }

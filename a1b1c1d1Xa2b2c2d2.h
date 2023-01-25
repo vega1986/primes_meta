@@ -257,44 +257,7 @@ namespace binom {
                     return myAccumulator.get_result();
                 }
         };        
-        
-        
-        
-        
-        
-        
 
-        
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-                
-        
-        
-        
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         struct summijkOuter {
             private:
                 term& left;
@@ -312,8 +275,7 @@ namespace binom {
                     return result;
                 }
         };
-        
-        
+
         template <size_t nle, size_t nri>
         inline double getSumm(term& tle, term& tri)
         {
